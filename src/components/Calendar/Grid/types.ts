@@ -4,7 +4,8 @@ export type GridProps = {
   zoom: number;
   rows: number;
   data: PaginatedSchedulerData;
-  onTileClick?: (data: SchedulerProjectData) => void;
+  onTileClick?: (e: React.MouseEvent, data: SchedulerProjectData) => void;
+  onContextMenu?: (e: React.MouseEvent, data: SchedulerProjectData) => void;
 };
 
 export type StyledSpanProps = {

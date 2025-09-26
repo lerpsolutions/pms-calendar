@@ -4,7 +4,8 @@ export type TileProps = {
   row: number;
   data: SchedulerProjectData;
   zoom: number;
-  onTileClick?: (data: SchedulerProjectData) => void;
+  onTileClick?: (e: React.MouseEvent, data: SchedulerProjectData) => void;
+  onContextMenu?: (e: React.MouseEvent, data: SchedulerProjectData) => void;
 };
 
 export type StyledTextProps = {

@@ -3,8 +3,9 @@ import { SchedulerData, SchedulerItemClickData, SchedulerProjectData } from "@/t
 export type CalendarProps = {
   data: SchedulerData;
   topBarWidth: number;
-  onTileClick?: (data: SchedulerProjectData) => void;
+  onTileClick?: (e: React.MouseEvent, data: SchedulerProjectData) => void;
   onItemClick?: (data: SchedulerItemClickData) => void;
+  onContextMenu?: (e: React.MouseEvent, data: SchedulerProjectData) => void;
   toggleTheme?: () => void;
 };
 

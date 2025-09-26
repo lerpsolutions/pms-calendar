@@ -57,7 +57,7 @@ declare type ParsedDatesRange = {
     endDate: Date;
 };
 
-export declare const Scheduler: ({ data, config, startDate, onRangeChange, onTileClick, onFilterData, onClearFilterData, onItemClick, isLoading }: SchedulerProps) => JSX.Element;
+export declare const Scheduler: ({ data, config, startDate, onRangeChange, onTileClick, onContextMenu, onFilterData, onClearFilterData, onItemClick, isLoading }: SchedulerProps) => JSX.Element;
 
 export declare type SchedulerData = SchedulerRow[];
 
@@ -104,7 +104,8 @@ export declare type SchedulerProps = {
     config?: Config;
     startDate?: string;
     onRangeChange?: (range: ParsedDatesRange) => void;
-    onTileClick?: (data: SchedulerProjectData) => void;
+    onTileClick?: (e: React.MouseEvent, data: SchedulerProjectData) => void;
+    onContextMenu?: (e: React.MouseEvent, data: SchedulerProjectData) => void;
     onFilterData?: () => void;
     onClearFilterData?: () => void;
     onItemClick?: (data: SchedulerItemClickData) => void;

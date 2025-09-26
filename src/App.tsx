@@ -50,9 +50,13 @@ function App() {
 
   const handleFilterData = () => console.log(`Filters button was clicked.`);
 
-  const handleTileClick = (data: SchedulerProjectData) =>
+  //const handleRightClick = (e, data) => {
+  //  console.log("right click", e, data);
+  //}
+
+  const handleTileClick = (e: React.MouseEvent, data: SchedulerProjectData) =>
     console.log(
-      `Item ${data.title} - ${data.subtitle} was clicked. \n==============\nStart date: ${data.startDate} \n==============\nEnd date: ${data.endDate}\n==============\nOccupancy: ${data.occupancy}`
+      `Item ${e} ${data.title} - ${data.subtitle} was clicked. \n==============\nStart date: ${data.startDate} \n==============\nEnd date: ${data.endDate}\n==============\nOccupancy: ${data.occupancy}`
     );
 
   return (
@@ -65,6 +69,7 @@ function App() {
           data={filteredData}
           isLoading={false}
           onTileClick={handleTileClick}
+          //onContextMenu={handleRightClick}
           onFilterData={handleFilterData}
           config={{ zoom: 0, maxRecordsPerPage: maxRecordsPerPage, showThemeToggle: true }}
           onItemClick={(data) => console.log("clicked: ", data)}

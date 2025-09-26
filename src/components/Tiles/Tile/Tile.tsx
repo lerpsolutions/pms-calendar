@@ -13,7 +13,7 @@ import {
 } from "./styles";
 import { TileProps } from "./types";
 
-const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick }) => {
+const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick, onContextMenu }) => {
   const { date } = useCalendar();
   const datesRange = getDatesRange(date, zoom);
   const { y, x, width } = getTileProperties(
@@ -27,8 +27,12 @@ const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick }) => {
 
   const handleContextMenu = (e: React.MouseEvent) => {
     e.preventDefault();
-    console.log("Right click on tile", data);
-    onTileClick?.(data);
+    onContextMenu?.(e, data);
+  };
+
+  const handleTielClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onTileClick?.(e, data);
   };
 
   const { colors } = useTheme();
@@ -43,7 +47,7 @@ const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick }) => {
         color: getTileTextColor(data.bgColor ?? "")
       }}
       onContextMenu={handleContextMenu}
-      onClick={() => onTileClick?.(data)}>
+      onClick={handleTielClick}>
       <StyledTextWrapper>
         <StyledStickyWrapper>
           <StyledText bold>{data.title}</StyledText>

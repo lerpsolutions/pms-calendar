@@ -16,6 +16,7 @@ const Scheduler = ({
   startDate,
   onRangeChange,
   onTileClick,
+  onContextMenu,
   onFilterData,
   onClearFilterData,
   onItemClick,
@@ -87,6 +88,7 @@ const Scheduler = ({
                 <Calendar
                   data={data}
                   onTileClick={onTileClick}
+                  onContextMenu={onContextMenu}
                   topBarWidth={topBarWidth ?? 0}
                   onItemClick={onItemClick}
                   toggleTheme={toggleTheme}

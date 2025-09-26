@@ -22,6 +22,7 @@ const initialTooltipData: TooltipData = {
 export const Calendar: FC<CalendarProps> = ({
   data,
   onTileClick,
+  onContextMenu,
   onItemClick,
   toggleTheme,
   topBarWidth
@@ -150,6 +151,7 @@ export const Calendar: FC<CalendarProps> = ({
             rows={totalRowsPerPage}
             ref={gridRef}
             onTileClick={onTileClick}
+            onContextMenu={onContextMenu}
           />
         ) : (
           <StyledEmptyBoxWrapper width={topBarWidth}>
