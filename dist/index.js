@@ -4127,17 +4127,20 @@ to{
     r.startDate,
     r.endDate,
     t
-  ), { colors: c } = Fe();
+  ), c = (h) => {
+    h.preventDefault(), console.log("Right click on tile", r), n == null || n(r);
+  }, { colors: d } = Fe();
   return /* @__PURE__ */ R(
     ta,
     {
       style: {
         left: `${a}px`,
         top: `${i}px`,
-        backgroundColor: `${r.bgColor ?? c.defaultTile}`,
+        backgroundColor: `${r.bgColor ?? d.defaultTile}`,
         width: `${l}px`,
         color: ea(r.bgColor ?? "")
       },
+      onContextMenu: c,
       onClick: () => n == null ? void 0 : n(r),
       children: /* @__PURE__ */ R(ra, { children: /* @__PURE__ */ ie(oa, { children: [
         /* @__PURE__ */ R(Or, { bold: !0, children: r.title }),

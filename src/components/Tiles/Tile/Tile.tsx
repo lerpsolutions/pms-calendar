@@ -27,6 +27,7 @@ const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick }) => {
 
   const handleContextMenu = (e: React.MouseEvent) => {
     e.preventDefault();
+    console.log("Right click on tile", data);
     onTileClick?.(data);
   };
 
