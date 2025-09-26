@@ -25,6 +25,11 @@ const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick }) => {
     zoom
   );
 
+  const handleContextMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onTileClick?.(data);
+  };
+
   const { colors } = useTheme();
 
   return (
@@ -36,6 +41,7 @@ const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick }) => {
         width: `${width}px`,
         color: getTileTextColor(data.bgColor ?? "")
       }}
+      onContextMenu={handleContextMenu}
       onClick={() => onTileClick?.(data)}>
       <StyledTextWrapper>
         <StyledStickyWrapper>
