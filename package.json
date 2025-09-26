@@ -24,8 +24,8 @@
     "typecheck": "tsc -b",
     "prepare": "husky install"
   },
-  "main": "dist/index.umd.js",
-  "modules": "dist/index.js",
+  "main": "dist/index.umd.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
