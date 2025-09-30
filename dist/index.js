@@ -3794,20 +3794,24 @@ to{
     `${r.year}-${r.month + 1}-${r.dayOfMonth}`
   ).month();
   o = -r.dayOfMonth * ge + ge;
-  for (let l = 0; l < Ot; l++)
-    a > Ot - 1 && (a = 0, i++), s = L(`${r.year}-${r.month + 1}-${r.dayOfMonth}`).add(l, "months").daysInMonth() * ge, Pe(
-      {
-        ctx: e,
-        x: o,
-        y: 0,
-        width: s,
-        height: Te,
-        textYPos: Kt,
-        label: L(`${r.year}-${r.month + 1}-${r.dayOfMonth}`).month(a).format("MMMM").toUpperCase() + ` ${L(`${r.year + i}-${r.month + 1}-${r.dayOfMonth}`).month(a).format("YYYY")}`,
-        font: ke.topRow
-      },
-      t
-    ), o += s, a++;
+  for (let l = 0; l < Ot; l++) {
+    a > Ot - 1 && (a = 0, i++), s = L(`${r.year}-${r.month + 1}-${r.dayOfMonth}`).add(l, "months").daysInMonth() * ge / 2;
+    for (let d = 1; d <= 2; d++)
+      Pe(
+        {
+          ctx: e,
+          x: o,
+          y: 0,
+          width: s,
+          height: Te,
+          textYPos: Kt,
+          label: L(`${r.year}-${r.month + 1}-${r.dayOfMonth}`).month(a).format("MMMM").toUpperCase() + ` ${L(`${r.year + i}-${r.month + 1}-${r.dayOfMonth}`).month(a).format("YYYY")}`,
+          font: ke.topRow
+        },
+        t
+      ), o += s;
+    a++;
+  }
 }, Wi = (e, r, t, n) => {
   const o = 7 * ge, s = Te, i = e.canvas.width / o + o, a = r.weekOfYear;
   let l = 0;

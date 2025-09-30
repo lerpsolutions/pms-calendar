@@ -23,30 +23,34 @@ export const drawMonthsOnTop = (ctx: CanvasRenderingContext2D, startDate: Day, t
       .add(i, "months")
       .daysInMonth();
 
-    width = dayInMonth * dayWidth;
+    width = (dayInMonth * dayWidth) / 2;
 
-    drawRow(
-      {
-        ctx,
-        x: xPos,
-        y: yPos,
-        width,
-        height: headerMonthHeight,
-        textYPos: topRowTextYPos,
-        label:
-          dayjs(`${startDate.year}-${startDate.month + 1}-${startDate.dayOfMonth}`)
-            .month(startMonthIndex)
-            .format("MMMM")
-            .toUpperCase() +
-          ` ${dayjs(`${startDate.year + yearIndex}-${startDate.month + 1}-${startDate.dayOfMonth}`)
-            .month(startMonthIndex)
-            .format("YYYY")}`,
-        font: fonts.topRow
-      },
-      theme
-    );
+    for (let j = 1; j <= 2; j++) {
+      drawRow(
+        {
+          ctx,
+          x: xPos,
+          y: yPos,
+          width,
+          height: headerMonthHeight,
+          textYPos: topRowTextYPos,
+          label:
+            dayjs(`${startDate.year}-${startDate.month + 1}-${startDate.dayOfMonth}`)
+              .month(startMonthIndex)
+              .format("MMMM")
+              .toUpperCase() +
+            ` ${dayjs(
+              `${startDate.year + yearIndex}-${startDate.month + 1}-${startDate.dayOfMonth}`
+            )
+              .month(startMonthIndex)
+              .format("YYYY")}`,
+          font: fonts.topRow
+        },
+        theme
+      );
+      xPos += width;
+    }
 
-    xPos += width;
     startMonthIndex++;
   }
 };

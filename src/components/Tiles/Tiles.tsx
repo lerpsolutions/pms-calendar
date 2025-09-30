@@ -24,7 +24,7 @@ const Tiles: FC<TilesProps> = ({ data, zoom, onTileClick, onContextMenu }) => {
         );
       })
       .flat(2);
-  }, [data, onTileClick, zoom]);
+  }, [data, onTileClick, onContextMenu, zoom]);
 
   return <>{placeTiles()}</>;
 };
