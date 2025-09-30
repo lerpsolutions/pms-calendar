@@ -31,6 +31,7 @@ function App() {
 
   const handleRangeChange = useCallback((range: ParsedDatesRange) => {
     setRange(range);
+    console.log("Visible range changed:", range);
   }, []);
 
   const filteredData = useMemo(
@@ -71,7 +72,7 @@ function App() {
           onTileClick={handleTileClick}
           //onContextMenu={handleRightClick}
           onFilterData={handleFilterData}
-          config={{ zoom: 0, maxRecordsPerPage: maxRecordsPerPage, showThemeToggle: true }}
+          config={{ zoom: 1, maxRecordsPerPage: maxRecordsPerPage, showThemeToggle: true }}
           onItemClick={(data) => console.log("clicked: ", data)}
         />
       ) : (
@@ -84,6 +85,13 @@ function App() {
             onTileClick={handleTileClick}
             onFilterData={handleFilterData}
             onItemClick={(data) => console.log("clicked: ", data)}
+            config={{
+              zoom: 1,
+              lang: "es",
+              maxRecordsPerPage: 100,
+              showTooltip: false,
+              showThemeToggle: false
+            }}
           />
         </StyledSchedulerFrame>
       )}

@@ -1,6 +1,6 @@
 import { prefixId } from "./styles";
 
-export const dayWidth = 50;
+export const dayWidth = 100;
 export const headerMonthHeight = 24;
 export const headerWeekHeight = 16;
 export const headerDayHeight = 40;
@@ -26,7 +26,7 @@ export const fonts = {
     number: "600 10px Inter"
   }
 };
-export const screenWidthMultiplier = 3;
+export const screenWidthMultiplier = 2;
 export const dayNameYoffset = 1.6;
 export const dayNumYOffset = 4.5;
 export const monthsInYear = 12;

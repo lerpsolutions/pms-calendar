@@ -1619,14 +1619,14 @@ H.div`
   width: 40vw;
   height: 40vh;
 `;
-const ge = 50, Te = 24, Qe = 16, Ne = 40, Xe = Ne + Qe + Te, Ye = 84, be = 56, Se = 196, _e = 12, ve = 50, Je = 24, at = 16, At = 40, xo = Je + at + At, xr = 1, br = 52, ke = {
+const ge = 100, Te = 24, Qe = 16, Ne = 40, Xe = Ne + Qe + Te, Ye = 84, be = 56, Se = 196, _e = 12, ve = 50, Je = 24, at = 16, At = 40, xo = Je + at + At, xr = 1, br = 52, ke = {
   topRow: "600 14px Inter",
   middleRow: "400 10px Inter",
   bottomRow: {
     name: "600 14px Inter",
     number: "600 10px Inter"
   }
-}, je = 3, bo = 1.6, Co = 4.5, Ot = 12, yt = 24, So = "reactSchedulerCanvasHeaderWrapper", en = "reactSchedulerCanvasWrapper", We = ot, Mo = 4, $o = 48, Ae = 5, ko = 40, Cr = 8, Kt = Te / 2 + 2, tn = Qe / 2 + Te + 1, Sr = 2, de = 60;
+}, je = 2, bo = 1.6, Co = 4.5, Ot = 12, yt = 24, So = "reactSchedulerCanvasHeaderWrapper", en = "reactSchedulerCanvasWrapper", We = ot, Mo = 4, $o = 48, Ae = 5, ko = 40, Cr = 8, Kt = Te / 2 + 2, tn = Qe / 2 + Te + 1, Sr = 2, de = 60;
 var qe = {}, _o = {
   get exports() {
     return qe;
